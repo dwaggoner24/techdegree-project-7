@@ -46,6 +46,7 @@ const activities = document.getElementById('activities');
 const activityCost = document.getElementById('activities-cost');
 let totalCost = 0;
 
+
 activities.addEventListener('change', (e) => {
     let cost = e.target.getAttribute('data-cost');
     cost = parseInt(cost);
@@ -95,77 +96,77 @@ const form = document.querySelector('form');
 //const nameField = document.getElementById('name');
 //const activities = document.getElementById('activities');
 
-function validName() {
+function validName() { //*validates name relative to regex and added valid or not valid class accordingly./
     let nameVal = nameField.value;
     let nameData = /^[a-z]/i.test(nameVal);
     if(!nameData){
         nameField.classList.add('not-valid');
-        nameField.lastElementChild.style.display = 'block';
+        nameField.parentElement.lastElementChild.style.display = 'block';
     } else {
         nameField.classList.replace('not-valid', 'valid');
         return true;
     }
 };
 
-function validEmail(){
+function validEmail(){//*validates email relative to regex and added valid or not valid class accordingly./
     let emailVal = email.value;
     let emailData = /^[^@]+@[^@.]+\.[a-z]+$/i.test(emailVal);
     if(!emailData){
         email.classList.add('not-valid');
-        email.lastElementChild.style.display = 'block';
+        email.parentElement.lastElementChild.style.display = 'block';
     } else {
         email.classList.replace('not-valid', 'valid');
         return true;
     }
 };
 
-function validActivity(){
+function validActivity(){//*validates activities relative to regex and added valid or not valid class accordingly./
     if(totalCost === 0){
         activities.classList.add('not-valid');
-        activities.lastElementChild.style.display = 'block';
+        activities.parentElement.lastElementChild.style.display = 'block';
     } else {
         activities.classList.replace('not-valid', 'valid');
         return true;
     }
 };
 
-function validCard(){
+function validCard(){ //*validates card number relative to regex and added valid or not valid class accordingly./
     let cardVal = cardNum.value;
     let cardData = /^\d{13,16}$/.test(cardVal);
     if(!cardData){
         cardNum.classList.add('not-valid');
-        cardNum.lastElementChild.style.display = 'block';
+        cardNum.parentElement.lastElementChild.style.display = 'block';
     } else {
         cardNum.classList.replace('not-valid', 'valid');
         return true;
     }
 };
 
-function validCvv(){
+function validCvv(){ //*validates cvv number relative to regex and added valid or not valid class accordingly./
     let cvvVal = cvv.value;
     let cvvData = /^\d{3}$/.test(cvvVal);
     if(!cvvData){
         cvv.classList.add('not-valid');
-        cvv.lastElementChild.style.display = 'block';
+        cvv.parentElement.lastElementChild.style.display = 'block';
     } else {
         cvv.classList.replace('not-valid', 'valid');
         return true;
     }
 };
 
-function validZip(){
+function validZip(){ //*validates zipcode relative to regex and added valid or not valid class accordingly./
     let zipVal = zipCode.value;
     let zipData = /^\d{5}$/.test(zipVal);
     if(!zipData){
         zip.classList.add('not-valid');
-        zip.lastElementChild.style.display = 'block';
+        zip.parentElement.lastElementChild.style.display = 'block';
     } else {
         zip.classList.replace('not-valid', 'valid');
         return true;
     }
 };
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', (e) => { //*eventlistener that is activiated and provides warning that something is not right in one or more fields info is added*/
     if(!validName()){
         e.preventDefault();
     }
@@ -175,7 +176,7 @@ form.addEventListener('submit', (e) => {
     if(!validActivity()){
         e.preventDefault();
     }
-    if(paymentType === 'credit-card'){
+    if(paymentType.value === 'credit-card'){
         if(!validCard()){
             e.preventDefault();
         }
@@ -198,7 +199,7 @@ for(let i = 0; i < checkbox.length; i++){
     checkbox[i].addEventListener('blur', (e) => {
         checkbox[i].parentNode.classList.add('blur');
     });
-}
+};
 
 
 
