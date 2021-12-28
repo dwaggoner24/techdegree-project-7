@@ -2,6 +2,7 @@
 const nameField = document.getElementById('name');
 nameField.focus();
 
+
 //*Job Role Section. */
 const jobRole = document.getElementById('title'); 
 const otherJobs = document.getElementById('other-job-role');
@@ -100,10 +101,10 @@ function validName() { //*validates name relative to regex and added valid or no
     let nameVal = nameField.value;
     let nameData = /^[a-z]/i.test(nameVal);
     if(!nameData){
-        nameField.classList.add('not-valid');
+        nameField.parentElement.classList.add('not-valid');
         nameField.parentElement.lastElementChild.style.display = 'block';
     } else {
-        nameField.classList.replace('not-valid', 'valid');
+        nameField.parentElement.classList.add('valid');
         return true;
     }
 };
@@ -112,10 +113,10 @@ function validEmail(){//*validates email relative to regex and added valid or no
     let emailVal = email.value;
     let emailData = /^[^@]+@[^@.]+\.[a-z]+$/i.test(emailVal);
     if(!emailData){
-        email.classList.add('not-valid');
+        email.parentElement.classList.add('not-valid');
         email.parentElement.lastElementChild.style.display = 'block';
     } else {
-        email.classList.replace('not-valid', 'valid');
+        email.parentElement.classList.add('valid');
         return true;
     }
 };
@@ -125,7 +126,7 @@ function validActivity(){//*validates activities relative to regex and added val
         activities.classList.add('not-valid');
         activities.parentElement.lastElementChild.style.display = 'block';
     } else {
-        activities.classList.replace('not-valid', 'valid');
+        activities.parentElement.classList.add('valid');
         return true;
     }
 };
@@ -134,10 +135,10 @@ function validCard(){ //*validates card number relative to regex and added valid
     let cardVal = cardNum.value;
     let cardData = /^\d{13,16}$/.test(cardVal);
     if(!cardData){
-        cardNum.classList.add('not-valid');
+        cardNum.parentElement.classList.add('not-valid');
         cardNum.parentElement.lastElementChild.style.display = 'block';
     } else {
-        cardNum.classList.replace('not-valid', 'valid');
+        cardNum.parentElement.classList.add('valid');
         return true;
     }
 };
@@ -146,10 +147,10 @@ function validCvv(){ //*validates cvv number relative to regex and added valid o
     let cvvVal = cvv.value;
     let cvvData = /^\d{3}$/.test(cvvVal);
     if(!cvvData){
-        cvv.classList.add('not-valid');
+        cvv.parentElement.classList.add('not-valid');
         cvv.parentElement.lastElementChild.style.display = 'block';
     } else {
-        cvv.classList.replace('not-valid', 'valid');
+        cvv.parentElement.classList.add('valid');
         return true;
     }
 };
@@ -158,10 +159,10 @@ function validZip(){ //*validates zipcode relative to regex and added valid or n
     let zipVal = zipCode.value;
     let zipData = /^\d{5}$/.test(zipVal);
     if(!zipData){
-        zip.classList.add('not-valid');
+        zip.parentElement.classList.add('not-valid');
         zip.parentElement.lastElementChild.style.display = 'block';
     } else {
-        zip.classList.replace('not-valid', 'valid');
+        zip.parentElement.classList.add('valid');
         return true;
     }
 };
