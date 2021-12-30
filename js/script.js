@@ -2,7 +2,6 @@
 const nameField = document.getElementById('name');
 nameField.focus();
 
-
 //*Job Role Section. */
 const jobRole = document.getElementById('title'); 
 const otherJobs = document.getElementById('other-job-role');
@@ -201,36 +200,3 @@ for(let i = 0; i < checkbox.length; i++){
         checkbox[i].parentNode.classList.add('blur');
     });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
