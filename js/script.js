@@ -125,7 +125,7 @@ function validActivity(){//*validates activities relative to regex and added val
         activities.classList.add('not-valid');
         activities.parentElement.lastElementChild.style.display = 'block';
     } else {
-        activities.parentElement.classList.add('valid');
+        activities.classList.add('valid');
         return true;
     }
 };
