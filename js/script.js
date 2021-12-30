@@ -74,11 +74,11 @@ paymentType.addEventListener('change', (e) => { //*shows appropriate field to fi
     if(e.target.value === 'credit-card'){
         creditCard.style.display = 'block';
         payPal.style.display = 'none'; 
-        bitCoin.style.disply = 'none';
+        bitCoin.style.display = 'none';
     } 
     if (e.target.value === 'paypal') {
         payPal.style.display = 'block'; 
-        bitCoin.style.disply = 'none';
+        bitCoin.style.display = 'none';
         creditCard.style.display = 'none';
     } 
     if (e.target.value === 'bitcoin'){
@@ -191,7 +191,7 @@ form.addEventListener('submit', (e) => { //*eventlistener that is activiated and
 });
 
 //*Accessability*/
-const checkbox = document.getElementByTagName('input[type=checkbox]');
+const checkbox = document.querySelectorAll('.activities-box input');
 
 for(let i = 0; i < checkbox.length; i++){
     checkbox[i].addEventListener('focus', (e) => {
@@ -201,6 +201,7 @@ for(let i = 0; i < checkbox.length; i++){
         checkbox[i].parentNode.classList.add('blur');
     });
 };
+
 
 
 
