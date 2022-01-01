@@ -104,6 +104,7 @@ function validName() { //*validates name relative to regex and added valid or no
         nameField.parentElement.lastElementChild.style.display = 'block';
     } else {
         nameField.parentElement.classList.add('valid');
+        nameField.parentElement.classList.remove('not-valid');
         return true;
     }
 };
@@ -116,6 +117,7 @@ function validEmail(){//*validates email relative to regex and added valid or no
         email.parentElement.lastElementChild.style.display = 'block';
     } else {
         email.parentElement.classList.add('valid');
+        email.parentElement.classList.remove('not-valid');
         return true;
     }
 };
@@ -138,6 +140,7 @@ function validCard(){ //*validates card number relative to regex and added valid
         cardNum.parentElement.lastElementChild.style.display = 'block';
     } else {
         cardNum.parentElement.classList.add('valid');
+        cardNum.parentElement.classList.remove('not-valid');
         return true;
     }
 };
@@ -150,6 +153,7 @@ function validCvv(){ //*validates cvv number relative to regex and added valid o
         cvv.parentElement.lastElementChild.style.display = 'block';
     } else {
         cvv.parentElement.classList.add('valid');
+        cvv.parentElement.classList.remove('not-valid');
         return true;
     }
 };
@@ -162,6 +166,7 @@ function validZip(){ //*validates zipcode relative to regex and added valid or n
         zip.parentElement.lastElementChild.style.display = 'block';
     } else {
         zip.parentElement.classList.add('valid');
+        zip.parentElement.classList.remove('not-valid');
         return true;
     }
 };
