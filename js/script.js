@@ -125,7 +125,7 @@ function validActivity(){//*validates activities relative to regex and added val
         activities.classList.add('not-valid');
         activities.parentElement.lastElementChild.style.display = 'block';
     } else {
-        activities.classList.add('valid');
+        activities.classList.replace('not-valid', 'valid');
         return true;
     }
 };
@@ -197,6 +197,6 @@ for(let i = 0; i < checkbox.length; i++){
         checkbox[i].parentNode.classList.add('focus');
     });
     checkbox[i].addEventListener('blur', (e) => {
-        checkbox[i].parentNode.classList.add('blur');
+        checkbox[i].parentNode.classList.replace('focus', 'blur');
     });
 };
